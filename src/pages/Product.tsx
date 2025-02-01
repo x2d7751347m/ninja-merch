@@ -22,11 +22,11 @@ export default function Product() {
         setTimeout(() => setAdding(false), 2000)
 
         // check if product exists
-        const exists = items.find(p => p.id === product().id)
+        const exists = items.find((p: { id: number; }) => p.id === product().id)
 
         if (exists) {
             // just inc quantity of that product
-            setItems(p => p.id === product().id, "quantity", q => q + 1)
+            setItems((p: { id: number; }) => p.id === product().id, "quantity", (q: number) => q + 1)
         }
 
         if (!exists) {

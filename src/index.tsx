@@ -16,7 +16,6 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 render(
-    // @ts-ignore
     () =>
         <CartProvider>
             <Router root={(props) => <App>{props.children}</App>}>

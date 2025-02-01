@@ -13,7 +13,7 @@ const App: Component = (props: { children: Element }) => {
     const {items} = useCartContext()
 
     const quantity = () => {
-        return items.reduce((acc, current) => {
+        return items.reduce((acc: number, current: { quantity: number; }) => {
             return acc + current.quantity
         }, 0)
     }
