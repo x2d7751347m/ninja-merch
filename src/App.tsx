@@ -1,9 +1,8 @@
 import {type Component, createSignal, Suspense} from 'solid-js';
 import banner from './assets/banner.png'
-import {Router, Route, A} from "@solidjs/router";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
+import {A} from "@solidjs/router";
 
+// @ts-ignore
 const App: Component = (props: { children: Element }) => {
     const [darkTheme, setDarkTheme] = createSignal(false)
 
