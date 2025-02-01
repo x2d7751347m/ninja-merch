@@ -1,13 +1,21 @@
 import {type Component, createSignal, Suspense} from 'solid-js';
 import banner from './assets/banner.png'
 import {A} from "@solidjs/router";
+import {useCartContext} from "./context/CartContext";
 
-// @ts-ignore
 const App: Component = (props: { children: Element }) => {
     const [darkTheme, setDarkTheme] = createSignal(false)
 
     function toggleTheme() {
         setDarkTheme(!darkTheme())
+    }
+
+    const {items} = useCartContext()
+
+    const quantity = () => {
+        return items.reduce((acc, current) => {
+            return acc + current.quantity
+        }, 0)
     }
 
     return (
@@ -26,7 +34,7 @@ const App: Component = (props: { children: Element }) => {
                     <h1>Ninja Merch</h1>
 
                     <A href="/">Home</A>
-                    <A href="/cart">Cart</A>
+                    <A href="/cart">Cart ({quantity()})</A>
                 </header>
 
                 <img class="rounded-md" src={banner} alt="site banner"/>

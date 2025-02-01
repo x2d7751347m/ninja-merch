@@ -15,3 +15,7 @@ body {
     border-2
     border-amber-600;
 }
+
+.btn:hover {
+    cursor: pointer;
+}

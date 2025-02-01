@@ -1,10 +1,11 @@
 /* @refresh reload */
-import {render, Suspense} from 'solid-js/web';
+import {render} from 'solid-js/web';
 
 import './index.css';
 import App from './App';
 import {Router} from '@solidjs/router';
 import {routes} from './routes';
+import {CartProvider} from './context/CartContext';
 
 const root = document.getElementById('root');
 
@@ -16,6 +17,11 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(
     // @ts-ignore
-    () => <Router root={(props) => <App>{props.children}</App>}>{routes}</Router>,
+    () =>
+        <CartProvider>
+            <Router root={(props) => <App>{props.children}</App>}>
+                {routes}
+            </Router>
+        </CartProvider>,
     root!,
 );
