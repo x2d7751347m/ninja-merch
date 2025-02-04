@@ -1,12 +1,9 @@
 import {useParams} from "@solidjs/router"
 import {createResource, createSignal, Show} from "solid-js"
 import {useCartContext} from "../context/CartContext";
+import {fetchProduct} from "../lib/api";
 
-const fetchProduct = async (id: string) => {
-    const res = await fetch('http://localhost:4000/products/' + id)
 
-    return res.json()
-}
 
 export default function Product() {
     const params = useParams()

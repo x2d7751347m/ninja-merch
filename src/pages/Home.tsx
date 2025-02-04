@@ -1,12 +1,7 @@
 import {A} from "@solidjs/router";
 import Card from "../components/Card";
 import {createResource, For, Show} from "solid-js";
-
-const fetchProducts = async () => {
-    const res = await fetch(`http://localhost:4000/products`)
-
-    return res.json()
-}
+import {fetchProducts} from "../lib/api";
 
 export default function Home() {
     const [products] = createResource(fetchProducts)
