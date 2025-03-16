@@ -14,8 +14,11 @@ $ pnpm install
 ## Available Scripts
 
 In the project directory, you can run:
+
 ### `pnpm install -g json-server`
-### `json-server -w -p 4000`
+
+### `json-server -w -p 4000 .\data\db.json`
+
 ### `pnpm dev`
 
 Runs the app in the development mode.<br>
