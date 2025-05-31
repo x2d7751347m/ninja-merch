@@ -1,3 +1,5 @@
+# Youtube: [Solid JS Crash Course Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gU_GvFygZFu0aBysPilkbB)
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
